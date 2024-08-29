@@ -11,3 +11,16 @@
 ## Commands
 
 Explore the `Makefile` to see all the available commands.
+
+## API Documentation
+
+- Type of nodes
+    - BaseNode - A node that is used as base for all other nodes. It represents a block that can have input and output slots
+    - Data Node
+    - Function Node
+    - Conditional Node
+    - ForEach Node
+    - Block Node
+    - Input Node
+    - Output Node
+    - Flow Node
