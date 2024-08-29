@@ -7,3 +7,4 @@
 - [Flow Service](/flow-service/)
 - [Thingsboard](/thingsboard/)
 - [Server setup](/server-setup/)
+- [Docs](/docs/)
