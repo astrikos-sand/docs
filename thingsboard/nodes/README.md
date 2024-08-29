@@ -1,4 +1,4 @@
-## Types of Nodes
+## Nodes
 
 ### Function Node
 
