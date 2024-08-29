@@ -9,6 +9,7 @@
 * Thingsboard
   * [Getting Started](/thingsboard/)
   * [User Journey](/thingsboard/user-journey/)
+  * [Types of Nodes](/thingsboard/node-types/)
 
 * [Server Setup](/server-setup/)
 * [Docs](/docs/)
