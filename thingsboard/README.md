@@ -50,7 +50,6 @@ chmod +x install_dev_db.sh
 ### Commands
 
 - `mvn install -DskipTests` - Use this command when there are changes in the source code and you want to build the project reusing the previous build
-- `lsb_release -a` - To check the ubuntu version
 - `java -jar application/target/thingsboard-3.6.4-boot.jar` - To run the jar file
 
 ## Good to know
