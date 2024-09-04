@@ -37,6 +37,7 @@ It contains the scripts to manage the server for the various services. The scrip
     - Run `chmod +x thingsboard.sh` to make the script executable
     - Run `./thingsboard.sh` to apply changes to the thingsboard server
     - Check the logs at `thingsboard.log`
+    - kill the process using `kill <pid>`. The pid can be found using `sudo ss -tuln`. The process that is running on port `8080` is the thingsboard service
     - After the build is complete, run the following command
         ```
         cd ~/thingsboard
