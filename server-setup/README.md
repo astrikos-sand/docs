@@ -76,3 +76,76 @@ It contains the scripts to manage the server for the various services. The scrip
 - `docker logs <container>` - To check the logs of the container
 - `docker exec -it <container> bash` - To get into the container
 - `docker stop <container>` - To stop the container
+
+### Migration
+
+- `make db-shell`
+- `\c postgres;`
+- `ALTER DATABASE astrikos_db RENAME TO astrikos_db_1;`
+- `CREATE DATABASE astrikos_db;`
+- `make migrate`
+- `cd /var/lib/docker/volumes/astrikos_backend_media/_data`
+- `ls`
+- `curl -L -o server.json "https://drive.google.com/uc?export=download&id=1RLKbiEieGTuCxQrfcKuEXpy9ndDp9j6Q"`
+- `curl -L -o populate.py "https://drive.google.com/uc?export=download&id=1BOUg4fv1-aMvjmUL5oyWrbqYtFKumG-X"`
+- `make shell`
+- `python manage.py loaddata ./media/server.json`
+- `python manage.py seed`
+- `python manage.py shell < ./media/populate.py`
+
+### Notes
+
+- `_get_global` - example: `_get_global("preprocessing_dict")`
+- `_set_global` - example: `_set_global("preprocessing_dict", {})`
+- `_globals` - example: `global_dict = _globals()`
+- `_logger`- example: `_logger("first", "second")`, `_logger("first", "second", error=True)`
+
+- Search using name or `prefix:<prefix>`
+- `log.json` - Log data in json format
+- `log.txt` - Container logs
+- `log.html` - Log data in html format
+
+### Inbuilt Functions
+
+- `_convert_csv_content_to_df`
+    - **Code**: `convert_csv_content_to_df.py`
+    - **Purpose**: Converts CSV content into a DataFrame.
+    - **Fields**:
+    - `csv_content` (input)
+    - `df` (output)
+
+- `_df_to_csv_content`
+    - **Code**: `df_to_csv_content.py`
+    - **Purpose**: Converts a DataFrame into CSV content.
+    - **Fields**:
+    - `df` (input)
+    - `csv_content` (output)
+
+- `_download_file_content`
+    - **Code**: `download_file_content.py`
+    - **Purpose**: Downloads content from a URL.
+    - **Fields**:
+    - `url` (input)
+    - `content` (output)
+
+- `_pickle_dump`
+    - **Code**: `pickle_dump.py`
+    - **Purpose**: Dumps a Python object into Pickle format.
+    - **Fields**:
+    - `python_obj` (input)
+    - `dumped_content` (output)
+
+- `_pickle_load`
+    - **Code**: `pickle_load.py`
+    - **Purpose**: Loads a Python object from Pickle content.
+    - **Fields**:
+    - `dumped_content` (input)
+    - `python_obj` (output)
+
+- `_save_file_content`
+    - **Code**: `save_file_content.py`
+    - **Purpose**: Saves file content to a specified location.
+    - **Fields**:
+    - `content` (input)
+    - `name` (input)
+    - `file_url` (output)
